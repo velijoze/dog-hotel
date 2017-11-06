@@ -10,10 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171010143415) do
+ActiveRecord::Schema.define(version: 20171031084619) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "dog_registrations", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "address_1"
+    t.string   "address_2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "country"
+    t.string   "phone"
+    t.string   "second_owner_name"
+    t.string   "second_owner_phone"
+    t.string   "dog_name"
+    t.string   "dog_sex"
+    t.string   "dog_breed"
+    t.string   "dog_weight"
+    t.date     "birthday"
+    t.string   "vet"
+    t.text     "dog_desription"
+    t.text     "dog_daycare_history"
+    t.string   "second_dog_name"
+    t.string   "second_dog_sex"
+    t.string   "second_dog_breed"
+    t.string   "second_dog_weight"
+    t.date     "second_dog_birthday"
+    t.text     "second_dog_description"
+    t.text     "comments"
+    t.string   "origin"
+    t.string   "referral"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "first_names", force: :cascade do |t|
     t.string   "last_name"

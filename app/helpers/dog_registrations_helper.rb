@@ -1,0 +1,2 @@
+module DogRegistrationsHelper
+end

@@ -1,0 +1,2 @@
+json.extract! dog_registration, :id, :first_name, :last_name, :email, :address_1, :address_2, :city, :state, :zip, :country, :phone, :second_owner_name, :second_owner_phone, :dog_name, :dog_sex, :dog_breed, :dog_weight, :birthday, :vet, :dog_desription, :dog_daycare_history, :second_dog_name, :second_dog_sex, :second_dog_breed, :second_dog_weight, :second_dog_birthday, :second_dog_description, :comments, :origin, :referral, :created_at, :updated_at
+json.url dog_registration_url(dog_registration, format: :json)

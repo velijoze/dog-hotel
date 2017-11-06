@@ -1,0 +1,63 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  address_1: MyString
+  address_2: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  country: MyString
+  phone: MyString
+  second_owner_name: MyString
+  second_owner_phone: MyString
+  dog_name: MyString
+  dog_sex: MyString
+  dog_breed: MyString
+  dog_weight: MyString
+  birthday: 2017-10-31
+  vet: MyString
+  dog_desription: MyText
+  dog_daycare_history: MyText
+  second_dog_name: MyString
+  second_dog_sex: MyString
+  second_dog_breed: MyString
+  second_dog_weight: MyString
+  second_dog_birthday: 2017-10-31
+  second_dog_description: MyText
+  comments: MyText
+  origin: MyString
+  referral: MyString
+
+two:
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  address_1: MyString
+  address_2: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  country: MyString
+  phone: MyString
+  second_owner_name: MyString
+  second_owner_phone: MyString
+  dog_name: MyString
+  dog_sex: MyString
+  dog_breed: MyString
+  dog_weight: MyString
+  birthday: 2017-10-31
+  vet: MyString
+  dog_desription: MyText
+  dog_daycare_history: MyText
+  second_dog_name: MyString
+  second_dog_sex: MyString
+  second_dog_breed: MyString
+  second_dog_weight: MyString
+  second_dog_birthday: 2017-10-31
+  second_dog_description: MyText
+  comments: MyText
+  origin: MyString
+  referral: MyString
