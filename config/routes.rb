@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :dog_registrations
   resources :users
   root 'main#index'
