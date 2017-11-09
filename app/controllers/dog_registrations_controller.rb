@@ -1,5 +1,6 @@
 class DogRegistrationsController < ApplicationController
   before_action :set_dog_registration, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create]
 
   # GET /dog_registrations
   # GET /dog_registrations.json
@@ -24,6 +25,7 @@ class DogRegistrationsController < ApplicationController
   # POST /dog_registrations
   # POST /dog_registrations.json
   def create
+    current_user.places.create(dog_registration_params)
     @dog_registration = DogRegistration.new(dog_registration_params)
 
     respond_to do |format|
