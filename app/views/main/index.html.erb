@@ -27,14 +27,14 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto mt-2 mt-md-0">
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <%= link_to 'About Us', about_path, class: 'nav-link' %>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="#">Daycare</a>
-              <a class="dropdown-item" href="#">Boarding</a>
-              <a class="dropdown-item" href="#">Training</a>
+              <%= link_to 'Daycare', daycare_path, class: 'dropdown-item' %>
+              <%= link_to 'Boarding', boarding_path, class: 'dropdown-item' %>
+              <%= link_to 'Training', training_path, class: 'dropdown-item' %>
             </div>
           </li>
           <% if user_signed_in? %>
@@ -206,12 +206,6 @@
 
 
     <!-- Begin page content -->
-
-    <footer class="footer">
-      <div class="container">
-        <span class="text-muted">Place sticky footer content here.</span>
-      </div>
-    </footer>
     
     <div class="container">
       <%= yield %>
