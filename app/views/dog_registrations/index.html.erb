@@ -1,83 +1,84 @@
-<p id="notice"><%= notice %></p>
+<div class="col-10 offset-1">
+  <p id="notice"><%= notice %></p>
 
-<h1>Dog Registrations</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Email</th>
-      <!-- <th>Address 1</th>
-      <th>Address 2</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Zip</th>
-      <th>Country</th>
-      <th>Phone</th>
-      <th>Second owner name</th>
-      <th>Second owner phone</th> -->
-      <th>Dog name</th>
-      <!-- <th>Dog sex</th>
-      <th>Dog breed</th>
-      <th>Dog weight</th>
-      <th>Birthday</th>
-      <th>Vet</th>
-      <th>Dog desription</th>
-      <th>Dog daycare history</th>
-      <th>Second dog name</th>
-      <th>Second dog sex</th>
-      <th>Second dog breed</th>
-      <th>Second dog weight</th>
-      <th>Second dog birthday</th>
-      <th>Second dog description</th>
-      <th>Comments</th>
-      <th>Origin</th>
-      <th>Referral</th> -->
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @dog_registrations.each do |dog_registration| %>
+  <h1>Dog Registrations</h1>
+  <br />
+  <table>
+    <thead>
       <tr>
-        <td><%= dog_registration.first_name %></td>
-        <td><%= dog_registration.last_name %></td>
-        <td><%= dog_registration.email %></td>
-        <!-- <td><%= dog_registration.address_1 %></td>
-        <td><%= dog_registration.address_2 %></td>
-        <td><%= dog_registration.city %></td>
-        <td><%= dog_registration.state %></td>
-        <td><%= dog_registration.zip %></td>
-        <td><%= dog_registration.country %></td>
-        <td><%= dog_registration.phone %></td>
-        <td><%= dog_registration.second_owner_name %></td>
-        <td><%= dog_registration.second_owner_phone %></td> -->
-        <td><%= dog_registration.dog_name %></td>
-        <!-- <td><%= dog_registration.dog_sex %></td>
-        <td><%= dog_registration.dog_breed %></td>
-        <td><%= dog_registration.dog_weight %></td>
-        <td><%= dog_registration.birthday %></td>
-        <td><%= dog_registration.vet %></td>
-        <td><%= dog_registration.dog_desription %></td>
-        <td><%= dog_registration.dog_daycare_history %></td>
-        <td><%= dog_registration.second_dog_name %></td>
-        <td><%= dog_registration.second_dog_sex %></td>
-        <td><%= dog_registration.second_dog_breed %></td>
-        <td><%= dog_registration.second_dog_weight %></td>
-        <td><%= dog_registration.second_dog_birthday %></td>
-        <td><%= dog_registration.second_dog_description %></td>
-        <td><%= dog_registration.comments %></td>
-        <td><%= dog_registration.origin %></td>
-        <td><%= dog_registration.referral %></td> -->
-        <td><%= link_to 'Show', dog_registration %></td>
-        <td><%= link_to 'Edit', edit_dog_registration_path(dog_registration) %></td>
-        <td><%= link_to 'Destroy', dog_registration, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Email</th>
+        <!-- <th>Address 1</th>
+        <th>Address 2</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip</th>
+        <th>Country</th>
+        <th>Phone</th>
+        <th>Second owner name</th>
+        <th>Second owner phone</th> -->
+        <th>Dog name</th>
+        <!-- <th>Dog sex</th>
+        <th>Dog breed</th>
+        <th>Dog weight</th>
+        <th>Birthday</th>
+        <th>Vet</th>
+        <th>Dog desription</th>
+        <th>Dog daycare history</th>
+        <th>Second dog name</th>
+        <th>Second dog sex</th>
+        <th>Second dog breed</th>
+        <th>Second dog weight</th>
+        <th>Second dog birthday</th>
+        <th>Second dog description</th>
+        <th>Comments</th>
+        <th>Referral</th> -->
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @dog_registrations.each do |dog_registration| %>
+        <tr>
+          <td><%= dog_registration.first_name %></td>
+          <td><%= dog_registration.last_name %></td>
+          <td><%= dog_registration.email %></td>
+          <!-- <td><%= dog_registration.address_1 %></td>
+          <td><%= dog_registration.address_2 %></td>
+          <td><%= dog_registration.city %></td>
+          <td><%= dog_registration.state %></td>
+          <td><%= dog_registration.zip %></td>
+          <td><%= dog_registration.country %></td>
+          <td><%= dog_registration.phone %></td>
+          <td><%= dog_registration.second_owner_name %></td>
+          <td><%= dog_registration.second_owner_phone %></td> -->
+          <td><%= dog_registration.dog_name %></td>
+          <!-- <td><%= dog_registration.dog_sex %></td>
+          <td><%= dog_registration.dog_breed %></td>
+          <td><%= dog_registration.dog_weight %></td>
+          <td><%= dog_registration.birthday %></td>
+          <td><%= dog_registration.vet %></td>
+          <td><%= dog_registration.dog_desription %></td>
+          <td><%= dog_registration.dog_daycare_history %></td>
+          <td><%= dog_registration.second_dog_name %></td>
+          <td><%= dog_registration.second_dog_sex %></td>
+          <td><%= dog_registration.second_dog_breed %></td>
+          <td><%= dog_registration.second_dog_weight %></td>
+          <td><%= dog_registration.second_dog_birthday %></td>
+          <td><%= dog_registration.second_dog_description %></td>
+          <td><%= dog_registration.comments %></td>
+          <td><%= dog_registration.referral %></td> -->
+          <td><%= link_to 'Show', dog_registration %></td>
+          <td><%= link_to 'Edit', edit_dog_registration_path(dog_registration) %></td>
+          <td><%= link_to 'Destroy', dog_registration, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Dog Registration', new_dog_registration_path %>
+  <br>
+
+  <%= link_to 'New Dog Registration', new_dog_registration_path %>
+
+</div>

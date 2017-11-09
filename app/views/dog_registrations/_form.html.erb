@@ -1,162 +1,51 @@
-<%= form_for(dog_registration) do |f| %>
-  <% if dog_registration.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(dog_registration.errors.count, "error") %> prohibited this dog_registration from being saved:</h2>
+  <%= simple_form_for(dog_registration) do |f| %>
+    <% if dog_registration.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(dog_registration.errors.count, "error") %> prohibited this dog_registration from being saved:</h2>
 
-      <ul>
-      <% dog_registration.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+        <ul>
+        <% dog_registration.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
   <% end %>
 
-  <div class="field">
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
-  </div>
 
-  <div class="field">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= f.label :address_1 %>
-    <%= f.text_field :address_1 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :address_2 %>
-    <%= f.text_field :address_2 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :city %>
-    <%= f.text_field :city %>
-  </div>
-
-  <div class="field">
-    <%= f.label :state %>
-    <%= f.text_field :state %>
-  </div>
-
-  <div class="field">
-    <%= f.label :zip %>
-    <%= f.text_field :zip %>
-  </div>
-
-  <div class="field">
-    <%= f.label :country %>
-    <%= f.text_field :country %>
-  </div>
-
-  <div class="field">
-    <%= f.label :phone %>
-    <%= f.text_field :phone %>
-  </div>
-
-  <div class="field">
-    <%= f.label :second_owner_name %>
-    <%= f.text_field :second_owner_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :second_owner_phone %>
-    <%= f.text_field :second_owner_phone %>
-  </div>
-
-  <div class="field">
-    <%= f.label :dog_name %>
-    <%= f.text_field :dog_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :dog_sex %>
-    <%= f.text_field :dog_sex %>
-  </div>
-
-  <div class="field">
-    <%= f.label :dog_breed %>
-    <%= f.text_field :dog_breed %>
-  </div>
-
-  <div class="field">
-    <%= f.label :dog_weight %>
-    <%= f.text_field :dog_weight %>
-  </div>
-
-  <div class="field">
-    <%= f.label :birthday %>
-    <%= f.date_select :birthday %>
-  </div>
-
-  <div class="field">
-    <%= f.label :vet %>
-    <%= f.text_field :vet %>
-  </div>
-
-  <div class="field">
-    <%= f.label :dog_desription %>
-    <%= f.text_area :dog_desription %>
-  </div>
-
-  <div class="field">
-    <%= f.label :dog_daycare_history %>
-    <%= f.text_area :dog_daycare_history %>
-  </div>
-
-  <div class="field">
-    <%= f.label :second_dog_name %>
-    <%= f.text_field :second_dog_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :second_dog_sex %>
-    <%= f.text_field :second_dog_sex %>
-  </div>
-
-  <div class="field">
-    <%= f.label :second_dog_breed %>
-    <%= f.text_field :second_dog_breed %>
-  </div>
-
-  <div class="field">
-    <%= f.label :second_dog_weight %>
-    <%= f.text_field :second_dog_weight %>
-  </div>
-
-  <div class="field">
-    <%= f.label :second_dog_birthday %>
-    <%= f.date_select :second_dog_birthday %>
-  </div>
-
-  <div class="field">
-    <%= f.label :second_dog_description %>
-    <%= f.text_area :second_dog_description %>
-  </div>
-
-  <div class="field">
-    <%= f.label :comments %>
-    <%= f.text_area :comments %>
-  </div>
-
-  <div class="field">
-    <%= f.label :origin %>
-    <%= f.select :origin %>
-  </div>
-
-  <div class="field">
-    <%= f.label :referral %>
-    <%= f.text_field :referral %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<div class="booyah-box col-10 offset-1">
+  <%= simple_form_for @dog_registration do |f| %><br />
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :email %>
+    <%= f.input :address_1 %>
+    <%= f.input :address_2 %>
+    <%= f.input :city %>
+    <%= f.input :state %>
+    <%= f.input :zip %>
+    <%= f.label :country %><br />
+    <%= f.country_select :country %><br /><br />
+    <%= f.input :second_owner_name %>
+    <%= f.input :second_owner_phone %>
+    <%= f.input :dog_name %>
+    <%= f.input :dog_sex %>
+    <%= f.input :dog_breed %>
+    <%= f.input :dog_weight %>
+    <%= f.input :birthday %>
+    <%= f.input :vet %>
+    <%= f.input :dog_desription %>
+    <%= f.input :dog_daycare_history %>
+    <%= f.input :second_dog_name %>
+    <%= f.input :second_dog_sex %>
+    <%= f.input :second_dog_breed %>
+    <%= f.input :second_dog_weight %>
+    <%= f.input :second_dog_birthday %>
+    <%= f.input :second_dog_description %>
+    <%= f.input :comments %>
+    <%= f.input :referral %>
+    <%= f.submit 'Submit', class: 'btn btn-primary btn-sm' %>
+    <br /><br />
+    <%= link_to 'Back', dog_registrations_path %>
+    <br /><br />
+  <% end %>
+</div>

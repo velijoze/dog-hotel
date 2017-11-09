@@ -21,7 +21,8 @@
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="#">Dogster</a>
+
+      <%= link_to 'Dogster', root_path, class: 'navbar-brand' %>
 
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto mt-2 mt-md-0">
@@ -51,6 +52,9 @@
               <%= link_to 'Sign up', new_user_registration_path, class: 'nav-link' %>
             </li>
           <% end %>
+            <li class="nav-item">
+              <%= link_to 'Schedule a trial', new_dog_registration_path, class: 'nav-link ' %>
+            </li>
         </ul>
       </div>
     </nav>
@@ -208,13 +212,23 @@
         <span class="text-muted">Place sticky footer content here.</span>
       </div>
     </footer>
+    
+    <div class="container">
+      <%= yield %>
+    </div>
 
-
-
-
-
-    <%= link_to 'Apply', new_dog_registration_path %>
-    <%= yield %>
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            Dogster - blah, blah
+          </div>
+          <div class="col-6">
+            Call us now xxx-xxx-xx-xx<br />
+          </div>
+        </div>
+      </div>
+    </div>
 
         <!-- Bootstrap core JavaScript
     ================================================== -->
