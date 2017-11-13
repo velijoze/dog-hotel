@@ -4,23 +4,21 @@
     <title>DogHotel</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <nav class="navbar navbar-toggleable-md fixed-top bg-faded">
+
+    <nav class="navbar navbar-toggleable-md fixed-top navbar-light bg-faded">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <%= link_to 'Dogster', root_path, class: 'navbar-brand' %>
 
-      <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-          <li class="nav-item">
-            <%= link_to 'About Us', about_path, class: 'nav-link' %>
-          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
@@ -29,10 +27,18 @@
               <%= link_to 'Training', training_path, class: 'dropdown-item' %>
             </div>
           </li>
+          <li class="nav-item">
+            <%= link_to 'About', about_path, class: 'nav-link  ' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Schedule a trial', new_dog_registration_path, class: 'nav-link  ' %>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
           <% if user_signed_in? %>
-<!--             <li class="nav-item">
+             <li class="nav-item">
               <%= link_to 'My Dashboard', "#", class: 'nav-link' %> 
-            </li> -->
+            </li>
             <li class="nav-item">
               <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
             </li>
@@ -44,10 +50,8 @@
               <%= link_to 'Sign up', new_user_registration_path, class: 'nav-link' %>
             </li>
           <% end %>
-            <li class="nav-item">
-              <%= link_to 'Schedule a trial', new_dog_registration_path, class: 'nav-link ' %>
-            </li>
         </ul>
+
       </div>
     </nav>
 
