@@ -17,209 +17,128 @@
   </head>
   <body>
 
-    <nav class="navbar navbar-toggleable-md fixed-top bg-faded">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <%= link_to 'Dogster', root_path, class: 'navbar-brand' %>
-
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-          <li class="nav-item">
-            <%= link_to 'About Us', about_path, class: 'nav-link' %>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <%= link_to 'Daycare', daycare_path, class: 'dropdown-item' %>
-              <%= link_to 'Boarding', boarding_path, class: 'dropdown-item' %>
-              <%= link_to 'Training', training_path, class: 'dropdown-item' %>
-            </div>
-          </li>
-          <% if user_signed_in? %>
-            <li class="nav-item">
-              <%= link_to 'My Dashboard', "#", class: 'nav-link' %>
-            </li>
-            <li class="nav-item">
-              <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
-            </li>
-          <% else %>
-            <li class="nav-item">
-              <%= link_to 'Sign in', new_user_session_path, class: 'nav-link' %>
-            </li>
-            <li class="nav-item">
-              <%= link_to 'Sign up', new_user_registration_path, class: 'nav-link' %>
-            </li>
-          <% end %>
-            <li class="nav-item">
-              <%= link_to 'Schedule a trial', new_dog_registration_path, class: 'nav-link ' %>
-            </li>
-        </ul>
-      </div>
-    </nav>
-
-      <% if notice.present? %>
-        <p class="alert alert-info"><%= notice %></p>
-      <% end %>
-
-      <% if alert.present? %>
-        <p class="alert alert-danger"><%= alert %></p>
-      <% end %>
-
-   
-
-      <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="20000">
-        <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <%= image_tag 'hero.jpg', class: "first-slide" %>
-            <div class="container">
-              <div class="carousel-caption text-left">
-                <h1>Play, Stay, Learn & Pamper</h1><br />
-                <h4>From our spacious dog daycare play areas to our beautiful boarding accommodations and grooming services, Dogster is the premier home away from home for your beloved pet.</h4><br />
-                <%= link_to 'Sign up today', new_user_registration_path, class: 'btn btn-sm btn-primary btn-sharp' %>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <%= image_tag 'hero2.jpg', class: "first-slide" %>
-            <div class="container">
-              <div class="carousel-caption text-left">
-                <h1>Passion for Dogs</h1><br />
-                <h4>We love dogs. We love them like you love them. While they’re boarding or hanging out in our daycare, they’ll get just as much attention and affection as they do at home. And don’t worry, their health and safety is always our #1 priority.</h4><br />
-                <%= link_to 'Learn more', "#", class: 'btn btn-sm btn-primary btn-sharp' %>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <%= image_tag 'hero3.jpg', class: "first-slide" %>
-            <div class="container">
-              <div class="carousel-caption text-left">
-                <h1>Exceptional Service</h1><br />
-                <h4>Make sure to take advantage of our 24/7 drop-off & pick-up, on-site dog grooming and spa services, and competitive pricing. Plus, check in on your pet anytime you want with our 24/7 webcams.</h4><br />
-                <a class="btn btn-sm btn-primary" href="#" role="button">Learn more</a>
-              </div>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="20000">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <%= image_tag 'hero.jpg', class: "first-slide" %>
+          <div class="container">
+            <div class="carousel-caption text-left">
+              <h1>Play, Stay, Learn & Pamper</h1><br />
+              <h4>From our spacious dog daycare play areas to our beautiful boarding accommodations and grooming services, Dogster is the premier home away from home for your beloved pet.</h4><br />
+              <%= link_to 'Sign up today', new_user_registration_path, class: 'btn btn-sm btn-primary btn-sharp' %>
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="container marketing">
-
-        <!-- Three columns of text below the carousel -->
-        <div class="row text-center">
-
-          <div class="col-lg-4">
-            <%= image_tag 'daycare.jpg', class: "rounded-circle" %>
-            <br />
-            <br />
-            <h2>Daycare</h2>
-
-            <p>We have numerous separate play areas for different sizes and breeds play, fresh air walks several times a day, and savings passes...</p>
-            <%= link_to 'view details', daycare_path, class: 'btn btn-sm btn-secondary btn-sharp' %>
-          </div><!-- /.col-lg-4 -->
-
-          <div class="col-lg-4">
-            <%= image_tag 'boarding.jpg', class: "rounded-circle" %>
-            <br />
-            <br />
-            <h2>Boarding</h2>
-            
-            <p>A truly “cage-less” boarding experience in enough open space your dog can play however much they want and sleep wherever they choose...</p>
-            <%= link_to 'view details', boarding_path, class: 'btn btn-sm btn-secondary btn-sharp' %>
-          </div><!-- /.col-lg-4 -->
-
-          <div class="col-lg-4">
-            <%= image_tag 'training.jpg', class: "rounded-circle" %>
-            <br />
-            <br />
-            <h2>Training</h2>
-            
-            <p>We are positive reinforcement certified trainers.  For every breed, age, and size.  Group classes or private lessons in obedience, agility, nose work, sports, tricks, and more...</p>
-            <%= link_to 'view details', training_path, class: 'btn btn-sm btn-secondary btn-sharp' %>
-          </div><!-- /.col-lg-4 -->
-
-        </div><!-- /.row -->
-
-
-        <!-- START THE FEATURETTES -->
-
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-          <div class="col-md-7">
-            <h2 class="featurette-heading">All day supervision <span class="text-muted">for your best friends</span></h2>
-            <p class="lead">Our 30,000 square foot campuses allow dogs to run and play freely under complete supervision. Choose special activities and customize your dog's play group. Complimentary Quick Train sessions, Yappy Hour, and Fluff-n-Fresh are included. </p>
-          </div>
-          <div class="col-md-5">
-            <%= image_tag 'side.jpg', class: "featurette-image img-fluid mx-auto" %>
+        <div class="carousel-item">
+          <%= image_tag 'hero2.jpg', class: "first-slide" %>
+          <div class="container">
+            <div class="carousel-caption text-left">
+              <h1>Passion for Dogs</h1><br />
+              <h4>We love dogs. We love them like you love them. While they’re boarding or hanging out in our daycare, they’ll get just as much attention and affection as they do at home. And don’t worry, their health and safety is always our #1 priority.</h4><br />
+              <%= link_to 'Learn more', "#", class: 'btn btn-sm btn-primary btn-sharp' %>
+            </div>
           </div>
         </div>
-
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-          <div class="col-md-5 order-md-1">
-            <%= image_tag 'side2.jpg', class: "featurette-image img-fluid mx-auto" %>
-          </div>
-          <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading">The ultimate peace of mind <span class="text-muted">when you travel.</span></h2>
-            <p class="lead">Large suites, small suites, and spacious puppy pens available. Dogs are individually hand-fed and receive a nose to tail check each day as we monitor activity, health, and well-being. 24/7 supervision. Upgrades and special requests welcome.</p>
-          </div>
-        </div>
-
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-          <div class="col-md-7">
-            <h2 class="featurette-heading">Need a helping hand <span class="text-muted">with obedience cues and specific behavior issues?</span></h2>
-            <p class="lead">Positive reinforcement training with certified trainers for all breeds, sizes, and ages. Learn along with your dog and enjoy an even closer bond. Small class sizes and lots of options from puppy training, dog obedience training, and agility to tricks, sport, and treibball. </p>
-          </div>
-          <div class="col-md-5">
-            <%= image_tag 'side4.jpg', class: "featurette-image img-fluid mx-auto" %>
-          </div>
-        </div>
-
-        <hr class="featurette-divider">
-
-        <!-- /END THE FEATURETTES -->
-
-      </div><!-- /.container -->
-
-
-    <!-- Begin page content -->
-    
-    <div class="container">
-      <%= yield %>
-    </div>
-
-    <div class="footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-6">
-            Dogster - blah, blah
-          </div>
-          <div class="col-6">
-            Call us now xxx-xxx-xx-xx<br />
+        <div class="carousel-item">
+          <%= image_tag 'hero3.jpg', class: "first-slide" %>
+          <div class="container">
+            <div class="carousel-caption text-left">
+              <h1>Exceptional Service</h1><br />
+              <h4>Make sure to take advantage of our 24/7 drop-off & pick-up, on-site dog grooming and spa services, and competitive pricing. Plus, check in on your pet anytime you want with our 24/7 webcams.</h4><br />
+              <a class="btn btn-sm btn-primary" href="#" role="button">Learn more</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-        <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../../../assets/js/vendor/popper.min.js"></script>
-    <script src="../../../../dist/js/bootstrap.min.js"></script>
-    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="../../../../assets/js/vendor/holder.min.js"></script>
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row text-center">
+
+        <div class="col-lg-4">
+          <%= image_tag 'daycare.jpg', class: "rounded-circle" %>
+          <br />
+          <br />
+          <h2>Daycare</h2>
+
+          <p>We have numerous separate play areas for different sizes and breeds play, fresh air walks several times a day, and savings passes...</p>
+          <%= link_to 'view details', daycare_path, class: 'btn btn-sm btn-secondary btn-sharp' %>
+        </div><!-- /.col-lg-4 -->
+
+        <div class="col-lg-4">
+          <%= image_tag 'boarding.jpg', class: "rounded-circle" %>
+          <br />
+          <br />
+          <h2>Boarding</h2>
+          
+          <p>A truly “cage-less” boarding experience in enough open space your dog can play however much they want and sleep wherever they choose...</p>
+          <%= link_to 'view details', boarding_path, class: 'btn btn-sm btn-secondary btn-sharp' %>
+        </div><!-- /.col-lg-4 -->
+
+        <div class="col-lg-4">
+          <%= image_tag 'training.jpg', class: "rounded-circle" %>
+          <br />
+          <br />
+          <h2>Training</h2>
+          
+          <p>We are positive reinforcement certified trainers.  For every breed, age, and size.  Group classes or private lessons in obedience, agility, nose work, sports, tricks, and more...</p>
+          <%= link_to 'view details', training_path, class: 'btn btn-sm btn-secondary btn-sharp' %>
+        </div><!-- /.col-lg-4 -->
+
+      </div><!-- /.row -->
+
+
+      <!-- START THE FEATURETTES -->
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">All day supervision <span class="text-muted">for your best friends</span></h2>
+          <p class="lead">Our 30,000 square foot campuses allow dogs to run and play freely under complete supervision. Choose special activities and customize your dog's play group. Complimentary Quick Train sessions, Yappy Hour, and Fluff-n-Fresh are included. </p>
+        </div>
+        <div class="col-md-5">
+          <%= image_tag 'side.jpg', class: "featurette-image img-fluid mx-auto" %>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-5 order-md-1">
+          <%= image_tag 'side2.jpg', class: "featurette-image img-fluid mx-auto" %>
+        </div>
+        <div class="col-md-7 order-md-2">
+          <h2 class="featurette-heading">The ultimate peace of mind <span class="text-muted">when you travel.</span></h2>
+          <p class="lead">Large suites, small suites, and spacious puppy pens available. Dogs are individually hand-fed and receive a nose to tail check each day as we monitor activity, health, and well-being. 24/7 supervision. Upgrades and special requests welcome.</p>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Need a helping hand <span class="text-muted">with obedience cues and specific behavior issues?</span></h2>
+          <p class="lead">Positive reinforcement training with certified trainers for all breeds, sizes, and ages. Learn along with your dog and enjoy an even closer bond. Small class sizes and lots of options from puppy training, dog obedience training, and agility to tricks, sport, and treibball. </p>
+        </div>
+        <div class="col-md-5">
+          <%= image_tag 'side4.jpg', class: "featurette-image img-fluid mx-auto" %>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
+
+    </div><!-- /.container -->
+
 
 
   </body>
