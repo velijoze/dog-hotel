@@ -22,17 +22,12 @@ class DogRegistrationsController < ApplicationController
   def edit
   end
 
-  # POST /dog_registrations
-  # POST /dog_registrations.json
   def create
-    @dog_registration = DogRegistration.new(dog_registration_params)
-
-    respond_to do |format|
-      if @dog_registration.save
-        format.html { redirect_to root_path, notice: 'Dog registration was successfully created.' }
-      else
-        format.html { render :new }
-      end
+    @dog_registration = current_user.dog_registration.create(dog_registration_params)
+    if @dog_registration.valid?
+      redirect_to root_path
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 

@@ -59,7 +59,12 @@ p, ol, ul, td {
 
 .carousel-caption h1 {
   font-family: 'roboto_condensedregular', sans-serif;
-  color: #FFFF00;
+  color: #00000;
+}
+
+.carousel-caption h4 {
+  font-family: 'roboto_condensedregular', sans-serif;
+  color: #00000;
 }
 
 /* Declare heights because of positioning of img element */
@@ -205,4 +210,12 @@ code {
   background: #fff;
   border: 1px solid #ccc;
   border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+}
+
+
+.help-block {
+  color: #ff3333;
+  background-color: #FFEEEE;
+  border-radius: 3px;
+  padding: 2px 8px 2px 8px;
 }
